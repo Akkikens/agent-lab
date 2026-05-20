@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/safety-check.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(git *)",
+      "Bash(cat *)",
+      "Bash(wc *)",
+      "Bash(mkdir *)",
+      "Bash(chmod *)"
+    ]
+  }
+}
