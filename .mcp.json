@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "task-tracker": {
+      "command": "uv",
+      "args": ["run", "--directory", "/Users/akshay/Documents/GitHub/agent-lab/mcp-servers/task-tracker", "python", "server.py"]
+    }
+  }
+}

@@ -6,7 +6,60 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/safety-check.sh"
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/safety-check.sh",
+            "statusMessage": "Safety check..."
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/env-protection.sh",
+            "statusMessage": "Secrets scan..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/env-protection.sh",
+            "statusMessage": "Secrets scan..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/audit-log.sh",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/compaction-saver.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat | /Users/akshay/Documents/GitHub/agent-lab/hooks/quality-gate.sh",
+            "async": true
           }
         ]
       }
@@ -14,14 +67,12 @@
   },
   "permissions": {
     "allow": [
-      "Bash(ls *)",
-      "Bash(find *)",
-      "Bash(grep *)",
-      "Bash(git *)",
-      "Bash(cat *)",
-      "Bash(wc *)",
-      "Bash(mkdir *)",
-      "Bash(chmod *)"
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Agent(*)",
+      "mcp__task-tracker__*"
     ]
   }
 }
