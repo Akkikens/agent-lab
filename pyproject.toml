@@ -1,5 +1,5 @@
 [project]
-name = "agent-lab"
+name = "ai-agent-lab"
 version = "0.1.0"
 description = "Python toolkit for building AI agent systems with Claude Code — MCP servers, orchestration, skills, and hooks"
 readme = "README.md"
@@ -71,4 +71,5 @@ testpaths = ["tests"]
 dev = [
     "pytest>=9.0.3",
     "ruff>=0.15.14",
+    "twine>=6.2.0",
 ]
