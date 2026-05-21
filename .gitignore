@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+.env
+.pytest_cache/
+.ruff_cache/
+*.jsonl
+mcp-servers/task-tracker/tasks.json
+.claude/audit/
+.claude/compaction-snapshots/
